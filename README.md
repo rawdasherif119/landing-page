@@ -3,8 +3,8 @@
 ## Table of Contents
 
 * [Introduction](#introduction)
-* [Languages] (#languages)
-* [HowUse] (#How to use the project)
+* [Languages](#languages)
+* [HowUsing](#How use the project)
 
 ## Introduction
 
@@ -12,11 +12,9 @@ Multi-section landing page, with dynamic navigation menu based on the sections o
 
 ## Languages
 
-HTML
-CSS
-JAVASCRIPT
+HTML ,CSS ,JAVASCRIPT
 
-## HowUse
+## How use the project
 First you open your browser second you click ctrl+O third you navigate to your index.html forth you click on it
 
 
