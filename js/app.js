@@ -40,10 +40,18 @@ function createNavMenu()
     });
 }
 
+function isInViewport(elem) {
+        let bounding = elem.getBoundingClientRect();
+        return (
+            bounding.top >= -400&&
+            bounding.top <= 150
+        );
+    };
+
 function activateSection(){
     sections.forEach(section => {
-        if (Math.floor(section.getBoundingClientRect().top) >= 0){
-            (!section.classList.contains('your-active-class')) ? section.classList.add('your-active-class'): '';   
+        if (isInViewport(section)){
+             section.classList.add('your-active-class');   
         }else{
             section.classList.remove('your-active-class');
         }
