@@ -34,6 +34,7 @@ function createNavMenu()
     sections.forEach(function (section) {
         // create li element
         const tab = document.createElement('li');
+        tab.setAttribute('id', section.getAttribute('id')+'_tab');
         tab.innerHTML = `<a class="menu__link" href="#${section.getAttribute('id')}">${section.getAttribute('data-nav')}</a>`;
         // Add tab to menu
         navMenu.appendChild(tab);
@@ -49,11 +50,14 @@ function isInViewport(elem) {
     };
 
 function activateSection(){
-    sections.forEach(section => {
+    sections.forEach(function (section) {
+        tab = document.getElementById(section.getAttribute('id') + '_tab')
         if (isInViewport(section)){
-             section.classList.add('your-active-class');   
+             section.classList.add('your-active-class');
+             tab.classList.add('active');
         }else{
             section.classList.remove('your-active-class');
+            tab.classList.remove('active');
         }
     })
 }
@@ -61,15 +65,15 @@ function activateSection(){
 function scrolling(event){
     event.preventDefault();
     // get target and find ancor tag and its href 
-    $anchor = event.target.getAttribute('href');
+    anchor = event.target.getAttribute('href');
     // check if anchor
-    if ($anchor != null) {
+    if (anchor != null) {
         // scroll smooth and set time out to slow it
-        document.querySelector($anchor).scrollIntoView({
+        document.querySelector(anchor).scrollIntoView({
             behavior: "smooth"
         });
         setTimeout(() => {
-            location.hash = $anchor;
+            location.hash = anchor;
         }, 1000);
     }
 }
